@@ -1,0 +1,134 @@
+// common 
+a:link,
+a:visited,
+a:hover,
+a:active { color:#08c }
+a:link { text-decoration:none; }
+.fl { float:left }
+.fr { float:right }
+.tal { text-align:left }
+.tar { text-align:right }
+.tac { text-align:center }
+.vat { vertical-align:top }
+.tov { text-indent:-1000em }
+.pos-abs { position:absolute }
+.pos-rel { position:relative }
+.pos-fixed { position:fixed }
+.pos-sticky { position:fixed; position:-webkit-sticky; position:sticky }
+.not-display { display:none!important }
+.not-visible { visibility:hidden }
+.top-z-index { z-index:10000!important }
+.flow-hidden { overflow:hidden!important }
+.flow-visible { overflow:visible!important }
+.clearfix { zoom:1 }
+.clearfix:after, .clearfix:before {  display:table; content:''; clear:both }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  background: #F0F3F3;
+}
+
+body {
+	background: #1d212a!important;
+}
+
+html,
+body,
+.app,
+.app-aside,
+.app-body {
+	min-height: 100%;
+}
+
+html,input,button,select,textarea {
+	color: #565656;
+	line-height: 1.5;
+	font-size: 12px;
+	font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-moz-font-feature-settings: 'liga', 'kern';
+}
+
+@theme-color-blue: #27b6af;
+@border-color: #eff2f7;
+
+.arrow { }
+
+.arrow:after {
+	width: 0;
+  height: 0;
+  content: '';
+  border: 8px solid transparent;
+  position: absolute;
+}
+
+.arrow-up:after {
+	top: -16px;
+	left: 50%;
+	margin-left: -8px;
+	border-bottom-color: #F0F3F3 
+}
+
+.arrow-right:after {
+	right: -8px;
+	top: 50%;
+	margin-top: -8px;
+	border-left-color: #F0F3F3 
+}
+
+.arrow-down:after {
+	bottom: -16px;
+	left: 50%;
+	margin-left: -8px;
+	border-top-color: #F0F3F3 
+}
+
+.arrow-left:after {
+	left: -8px;
+	top: 50%;
+	margin-left: -8px;
+	border-right-color: #F0F3F3 
+}
+
+.query-bar {
+	.query-item {
+		margin-right: 12px;
+		.label-name {
+		  margin-right: 8px;
+		}
+		.ui-input {
+			width: 280px;
+		}
+	}
+	.ui-btn-group {
+		button {
+			margin-left:8px; 
+		}
+	}
+}
+
+.operation {
+	a {
+		margin: 0 4px;
+	}
+}
+.form-table {
+	width: 100%;
+	th,td {
+		padding: 8px;
+	}
+}
+// redefine
+.ant-date-picker,
+.ant-time-picker {
+	input[type=text] {
+		width: 100%;
+	}
+}
