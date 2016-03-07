@@ -1,6 +1,35 @@
 var IosCanvas = require('./lib/iosCanvas');
 var util = {};
 
+// left: 37, up: 38, right: 39, down: 40,
+// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+var events = 'touchmove pointermove MSPointerMove scroll DOMMouseScroll wheel mousewheel'.replace(/\s/g,'.util '); // join namespace;
+
+function preventDefault (e) {
+  e.preventDefault(); 
+}
+
+function stopPropagation (e) {
+  e.stopPropagation();
+}
+
+function preventDefaultForScrollKeys (e) {
+  if (keys[e.keyCode]) {
+    preventDefault(e);
+  }
+}
+
+util.enableEvents = function () {
+  $(window).off(events,preventDefault);
+  $(document).off('keydown.util',preventDefaultForScrollKeys);
+};
+
+util.disableEvents = function () {
+  $(window).on(events,preventDefault);
+  $(document).on('keydown.util',preventDefaultForScrollKeys);
+};
+
 util.getLocationOrigin = function () {
 	return location.origin ?
 		location.origin :

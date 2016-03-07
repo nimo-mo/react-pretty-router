@@ -40,6 +40,11 @@ gulp.task('dest-fonts', function () {
   ]).pipe(gulp.dest('dist/fonts'));
 });
 
+gulp.task('dest-statics', function () {
+  return gulp.src('src/statics/**/*')
+    .pipe(gulp.dest('dist/statics'));
+});
+
 gulp.task('dest-html', function() {
   gulp.src('src/*.html')
     .pipe(gulp.dest('dist'));
@@ -78,9 +83,10 @@ gulp.task('watch', ['compile-less','webpack'], function() {
 });
 
 gulp.task('build', [
+  'dest-html',
   'dest-fonts',
   'dest-images',
-  'dest-html',
+  'dest-statics',
   'compress-css',
   'compress-js'
 ]);

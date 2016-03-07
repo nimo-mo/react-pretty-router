@@ -5,20 +5,33 @@ var requestUrl = Util.getRequestUrl() || Util.getLocationOriginPath();
 var api = {};
 
 api.request = function (type,path,data,ajaxSettings) {
-	var url = requestUrl + path;
-	var data = type === 'GET' ? $.param(data) : JSON.stringify(data);
+
+	// fixed no args
+	type = type || 'GET';
+	path = path || '';
+	data = data || {};
+	ajaxSettings = ajaxSettings || {};
+
+	// set value
+	path = requestUrl + path;
+	data = type === 'GET' ? $.param(data) : JSON.stringify(data);
+
+	// set headers
 	var currentUser = Util.getCurrentUser();
 	var headers = {
 		'X-User-Id': currentUser.id,
 		'X-User-Token': currentUser.token
-	}
+	};
+
+	// extend ajaxSettings and return the jqXHR
 	return $.ajax($.extend({
 		cache: false,
-		url: url,
+		url: path,
 		type: type,
 		data: data,
 		headers: headers
-	},ajaxSettings||{}))
+	},ajaxSettings))
+
 };
 
 api.get = function (path,data,ajaxSettings) {
