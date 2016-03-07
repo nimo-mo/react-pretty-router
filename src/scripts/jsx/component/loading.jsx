@@ -13,14 +13,23 @@ var Loading = React.createClass({
 	componentDidMount: function() {
 		var self = this;
 		self.setup();
+
 		// for jquery
 		$.ajaxSetup({
 			beforeSend: self.start,
 			complete: self.done
 		});
+		
 		// for zepto
 		// $.ajaxSettings.beforeSend = self.start;
 		// $.ajaxSettings.complete = self.done;
+
+		// global export
+		window.Loading = {
+			setup: self.setup,
+			start: self.start,
+			done: self.done
+		};
 	},
 
 	start: function () {

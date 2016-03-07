@@ -10,10 +10,12 @@ var Demo = React.createClass({
 	},
 
 	componentDidMount: function() {
-		Api.get('',{},{
+		Api.get(null,null,{
 			// ajaxSettings first
 			url:'../statics/demo.json',
-			complete: function () {}
+			complete: function () {
+				setTimeout(Loading.done,2000)
+			}
 		})
 		.done(function (res) {
 			console.log(res)
