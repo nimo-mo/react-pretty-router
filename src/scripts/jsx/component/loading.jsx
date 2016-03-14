@@ -19,7 +19,7 @@ var Loading = React.createClass({
 			beforeSend: self.start,
 			complete: self.done
 		});
-		
+
 		// for zepto
 		// $.ajaxSettings.beforeSend = self.start;
 		// $.ajaxSettings.complete = self.done;
@@ -51,7 +51,7 @@ var Loading = React.createClass({
       color: '#fff',      // #rgb or #rrggbb
       radius: 10,          // The radius of the inner circle
       length: 10,          // The length of each line
-      corners: 5          // Roundness (0..1)
+      corners: 10          // Roundness (0..1)
     }).spin(self.refs.spinner);
   },
 

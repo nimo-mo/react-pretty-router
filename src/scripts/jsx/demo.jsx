@@ -1,11 +1,20 @@
 var React = require('react');
 var Api = require('../js/api');
 
+var EasySelect = require('./component/easySelect');
+
 var Demo = React.createClass({
 
 	getInitialState: function() {
 		return {
-			x:123 
+			value: 1,
+			options: [{
+				value: 1,
+				text: 'text1' 
+			},{
+				value: 2,
+				text: 'text2' 
+			}] 
 		};
 	},
 
@@ -14,20 +23,32 @@ var Demo = React.createClass({
 			// ajaxSettings first
 			url:'../statics/demo.json',
 			complete: function () {
-				setTimeout(Loading.done,2000)
+				setTimeout(Loading.done,20000)
 			}
 		})
 		.done(function (res) {
-			console.log(res)
+			// console.log(res)
 		})
 		.fail(function (error) {
 			// body...
-		})
+		});
+	},
+
+	onChange: function (value) {
+		console.log(value);
 	},
 
 	render: function() {
+		var self = this;
+		var state = self.state;
 		return (
-			<div style={{height:2000}} />
+			<div>
+				<EasySelect
+					ref="demo"
+					value={state.value}
+					options={state.options}
+					onChange={self.onChange} />
+			</div>
 		);
 	}
 
