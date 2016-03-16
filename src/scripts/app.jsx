@@ -5,8 +5,10 @@ var Redirect = ReactRouter.Redirect;
 var Route = ReactRouter.Route;
 var Router = ReactRouter.Router;
 var BrowserHistory = ReactRouter.browserHistory;
-window.$ = require('jquery');
-require('./js/lib/jquery.cookie');
+// window.$ = require('jquery');
+// require('./js/lib/jquery.cookie');
+window.$ = require('./js/lib/zepto');
+require('./js/lib/zepto.cookie');
 
 var Loading = require('./jsx/component/loading');
 var NoMatch = require('./jsx/component/noMatch');

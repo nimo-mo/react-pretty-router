@@ -41,27 +41,27 @@ util.getLocationOriginPath = function () {
 };
 
 util.getRequestUrl = function (requestUrl) {
-	return $.cookie('requestUrl');
+	return $.fn.cookie('requestUrl');
 };
 
 util.setRequestUrl = function (requestUrl) {
-	$.cookie('requestUrl',requestUrl);
+	$.fn.cookie('requestUrl',requestUrl);
 };
 
 util.getCurrentUser = function () {
 	return {
-		id: $.cookie('X-User-Id'),
-		name: $.cookie('X-User-Name'),
-		token: $.cookie('X-User-Token'),
-		mobile: $.cookie('X-User-Mobile')
+		id: $.fn.cookie('X-User-Id'),
+		name: $.fn.cookie('X-User-Name'),
+		token: $.fn.cookie('X-User-Token'),
+		mobile: $.fn.cookie('X-User-Mobile')
 	}
 };
 
 util.clearCurrentUser = function () {
-	$.removeCookie('X-User-Id');
-	$.removeCookie('X-User-Name');
-	$.removeCookie('X-User-Token');
-	$.removeCookie('X-User-Mobile');
+	$.fn.cookie('X-User-Id', null);
+	$.fn.cookie('X-User-Name', null);
+	$.fn.cookie('X-User-Token', null);
+	$.fn.cookie('X-User-Mobile', null);
 };
 
 util.pushToLogin = function (loginPath,reactScope) {

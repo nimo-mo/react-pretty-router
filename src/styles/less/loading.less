@@ -2,7 +2,8 @@
 	text-align: center;
 	color: #fff;
 	.loading {
-		transtion:0.25s;
+		.scale(1.5);
+		transition:0.25s;
 		position: fixed;
 		top: 50%;
 		left: 50%;
@@ -23,6 +24,7 @@
 		}
 	}
 	.loading.visible {
+		.scale(1);
 		visibility: visible;
 		opacity: 1;
 	}

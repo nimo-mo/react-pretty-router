@@ -27,7 +27,7 @@ var Sign = React.createClass({
   },
 
   componentDidMount: function() {
-  	this.context.router.push('up');
+  	// this.context.router.push('up');
   },
 
   componentDidUpdate: function(prevProps, prevState) {

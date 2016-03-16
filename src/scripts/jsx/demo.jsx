@@ -23,7 +23,7 @@ var Demo = React.createClass({
 			// ajaxSettings first
 			url:'../statics/demo.json',
 			complete: function () {
-				setTimeout(Loading.done,20000)
+				setTimeout(Loading.done,3000)
 			}
 		})
 		.done(function (res) {
@@ -48,6 +48,8 @@ var Demo = React.createClass({
 					value={state.value}
 					options={state.options}
 					onChange={self.onChange} />
+					<button onClick={Loading.start}>Loading.start</button>
+					<button onClick={Loading.done}>Loading.done</button>
 			</div>
 		);
 	}

@@ -59,6 +59,22 @@ html,input,button,select,textarea {
 @theme-color-blue: #27b6af;
 @border-color: #eff2f7;
 
+.scale (@s) {
+ -webkit-transform: scale(@s);
+	-moz-transform: scale(@s);
+	-ms-transform: scale(@s);
+	-o-transform: scale(@s);
+	transform: scale(@s);
+}
+
+.blur (@b) {
+	-webkit-filter: blur(@b);
+	-moz-filter: blur(@b);
+	-o-filter: blur(@b);
+	-ms-filter: blur(@b);
+	filter: blur(@b);
+}
+
 .arrow { }
 
 .arrow:after {
