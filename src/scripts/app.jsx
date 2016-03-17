@@ -14,13 +14,15 @@ var Loading = require('./jsx/component/loading');
 var NoMatch = require('./jsx/component/noMatch');
 var Sign = require('./jsx/sign');
 var Demo = require('./jsx/demo');
+var RouterDemo = require('./jsx/routerDemo');
 
 ReactDOM.render(<Loading />, document.getElementById('app-loading'));
 ReactDOM.render((
   <Router history={BrowserHistory}>
-    <Route path="/" components={Sign}></Route>
+    <Route path="/" components={RouterDemo}></Route>
     <Route path="/demo" components={Demo}></Route>
     <Route path="/sign/:type" components={Sign}></Route>
+    <Route path="/routerDemo" components={RouterDemo}></Route>
     <Route path="*" component={NoMatch}/>
   </Router>
 ), document.getElementById('app'));

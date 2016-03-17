@@ -19,19 +19,19 @@ var Demo = React.createClass({
 	},
 
 	componentDidMount: function() {
-		Api.get(null,null,{
-			// ajaxSettings first
-			url:'../statics/demo.json',
-			complete: function () {
-				setTimeout(Loading.done,3000)
-			}
-		})
-		.done(function (res) {
-			// console.log(res)
-		})
-		.fail(function (error) {
-			// body...
-		});
+		// Api.get(null,null,{
+		// 	// ajaxSettings first
+		// 	url:'../statics/demo.json',
+		// 	complete: function () {
+		// 		setTimeout(Loading.done,3000)
+		// 	}
+		// })
+		// .done(function (res) {
+		// 	// console.log(res)
+		// })
+		// .fail(function (error) {
+		// 	// body...
+		// });
 	},
 
 	onChange: function (value) {
