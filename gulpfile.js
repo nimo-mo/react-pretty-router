@@ -60,7 +60,8 @@ gulp.task('compress-js', ['webpack'], function() {
 gulp.task('compress-css', ['compile-less'], function() {
   return gulp.src([
     'src/styles/app.css',
-    'src/styles/antd.css'
+    'src/styles/weui.css',
+    'src/styles/font-awesome.css'
   ])
     .pipe(cssnano())
     .pipe(md5(5,'dist/*.html'))

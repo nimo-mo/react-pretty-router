@@ -18,6 +18,7 @@ var RouterDemo = React.createClass({
 					<li><Link to={{ pathname:'/sign/in' }}>/sign/in</Link></li>
 					<li><Link to={{ pathname:'/sign/up' }}>/sign/up</Link></li>
 					<li><Link to={{ pathname:'/sign/up', query:{ q:1, k:2 } }}>/sign/up/with/query</Link></li>
+					<li><Link to={{ pathname:'/weuiDemo' }}>weuiDemo</Link></li>
 				</ul>
 			</div>
 		);
